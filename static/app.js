@@ -1,0 +1,3 @@
+function setAmount(v){const x=document.getElementById('amount');if(x)x.value=v}function setCard(v){const x=document.querySelector('.cardinput');if(x)x.value=v}
+function copyCard(){const x=document.getElementById('cardnum');if(x){navigator.clipboard.writeText(x.innerText);const b=document.querySelector('.row button');if(b){b.innerText='Скопійовано';setTimeout(()=>b.innerText='Копіювати',1200)}}}
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.cardinput').forEach(x=>x.addEventListener('input',()=>{let v=x.value.replace(/\D/g,'').slice(0,16);x.value=v.replace(/(.{4})/g,'$1 ').trim()}));document.querySelectorAll('.msg').forEach(x=>setTimeout(()=>x.remove(),4500))});
